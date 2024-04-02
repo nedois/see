@@ -1,0 +1,24 @@
+"""
+Constants used in the project.
+"""
+
+# After the trigger is received, the delay before the PZT is activated
+PZT_ACTIVATION_DELAY = 0.50e-6  # 0.5 µs
+
+AVOGADRO_CONSTANT = 6.0221415e23  # (1/mol)
+N = AVOGADRO_CONSTANT
+
+BOLTZMANN_CONSTANT = 1.38066e-23  # (J/K)
+kb = BOLTZMANN_CONSTANT
+
+ELECTRON_CHARGE = 1.60218e-19  # (C)
+e = ELECTRON_CHARGE
+
+VOID_PERMITTIVITY = 8.854188E-12  # (F/m)
+eps0 = VOID_PERMITTIVITY
+
+WATER_PERMITTIVITY = 80.1 * VOID_PERMITTIVITY  # (F/m)
+epsf = WATER_PERMITTIVITY
+
+WATER_VISCOUSITY = 0.001  # (Pa.s)
+eta = WATER_VISCOUSITY
