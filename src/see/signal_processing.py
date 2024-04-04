@@ -10,3 +10,23 @@ def butter_lowpass_filter(data: np.ndarray, cutoff: float, fs: float, order: int
     result = signal.filtfilt(b, a, data)
 
     return result
+
+
+def relative_wavelet_delay(w1: np.ndarray, w2: np.ndarray, dt: float = 1.0):
+    """
+    Get the relative delay between two wavelets with the same number of samples.
+
+    Parameters
+    ----------
+    w1 : np.ndarray
+        The first wavelet.
+    w2 : np.ndarray
+        The second wavelet.
+    dt : float
+        The time step
+    """
+    correlation = signal.correlate(w1, w2, mode="full")
+    lags = signal.correlation_lags(len(w1), len(w2), mode="full")
+    lag = lags[np.argmax(correlation)]
+
+    return lag*dt
