@@ -1,3 +1,7 @@
+# Figures
+*.pdf
+*.png
+
 # Data files
 **/data/*
 
